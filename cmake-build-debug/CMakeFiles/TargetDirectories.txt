@@ -1,0 +1,3 @@
+F:/BaiduSyncdisk/desktop/os_course _design/cmake-build-debug/CMakeFiles/os_course__design.dir
+F:/BaiduSyncdisk/desktop/os_course _design/cmake-build-debug/CMakeFiles/edit_cache.dir
+F:/BaiduSyncdisk/desktop/os_course _design/cmake-build-debug/CMakeFiles/rebuild_cache.dir

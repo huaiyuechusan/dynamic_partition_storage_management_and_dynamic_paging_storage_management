@@ -1,0 +1,27 @@
+// 1. 架构设计
+系统分为三大模块：
+   - 动态分区管理模块（包含三种分配算法）
+   - 请求分页管理模块（含FIFO页面置换）
+   - 图形界面模块（基于Ncurses实现）
+
+// 2. 核心数据结构设计
+/* 动态分区管理 */
+typedef struct partition {
+    int start;
+    int size;
+    struct partition *next;
+} Partition;
+
+/* 分页管理 */
+typedef struct page_table_entry {
+    int present;     // 存在标志
+    int frame;       // 内存块号
+    int modified;    // 修改标志
+    int disk_loc;    // 磁盘位置
+    int load_time;   // 用于FIFO算法
+} PageEntry;
+
+// 3. 内存初始化
+#define MEM_SIZE 64*1024       // 64KB内存
+#define PAGE_SIZE 1024         // 页大小
+#define FRAME_COUNT (MEM_SIZE/PAGE_SIZE)  // 64个内存块 
